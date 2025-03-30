@@ -75,7 +75,7 @@ if __name__ == "__main__":
         callbacks=[EarlyStoppingCallback(early_stopping_patience=2)]
     )
 
-    trainer.train()
+    trainer.train(resume_from_checkpoint=True)
 
     metrics = trainer.evaluate(tokenized_datasets["test"])
     print("Test Evaluation Metrics:", metrics)
