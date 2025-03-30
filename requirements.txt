@@ -6,4 +6,5 @@ tqdm==4.67.1
 datasets
 transformers
 evaluate
+accelerate
 --extra-index-url https://download.pytorch.org/whl/cu126
