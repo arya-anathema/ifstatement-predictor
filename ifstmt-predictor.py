@@ -12,6 +12,7 @@ model = T5ForConditionalGeneration.from_pretrained(model_checkpoint)
 
 tokenizer = RobertaTokenizer.from_pretrained(model_checkpoint)
 tokenizer.add_tokens(["<IF-STMT>"])
+tokenizer.add_tokens(["<tab>"])
 
 model.resize_token_embeddings(len(tokenizer))
 
@@ -26,9 +27,9 @@ def preprocess_function(examples):
 
 
 def dataset_init():
-    test_df = pd.read_csv('Archive/ft_test.csv')
-    train_df = pd.read_csv('Archive/ft_train.csv')
-    valid_df = pd.read_csv('Archive/ft_valid.csv')
+    test_df = pd.read_csv('output_csv/test_output.csv')
+    train_df = pd.read_csv('output_csv/train_output.csv')
+    valid_df = pd.read_csv('output_csv/valid_output.csv')
 
     train_dataset = Dataset.from_pandas(train_df)
     valid_dataset = Dataset.from_pandas(valid_df)
@@ -64,6 +65,7 @@ if __name__ == "__main__":
         save_total_limit=2,
         logging_steps=100,
         push_to_hub=False,
+        resume_from_checkpoint=False
     )
 
     trainer = Trainer(
@@ -75,7 +77,7 @@ if __name__ == "__main__":
         callbacks=[EarlyStoppingCallback(early_stopping_patience=2)]
     )
 
-    trainer.train(resume_from_checkpoint=True)
+    trainer.train()
 
     metrics = trainer.evaluate(tokenized_datasets["test"])
     print("Test Evaluation Metrics:", metrics)
