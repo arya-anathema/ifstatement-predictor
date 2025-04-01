@@ -58,13 +58,15 @@ if __name__ == "__main__":
         learning_rate=5e-5,
         per_device_train_batch_size=2,
         per_device_eval_batch_size=2,
-        num_train_epochs=5,
+        num_train_epochs=7,
         weight_decay=0.01,
         load_best_model_at_end=True,
         metric_for_best_model="eval_loss",
-        save_total_limit=2,
+        save_total_limit=5,
         logging_steps=100,
         push_to_hub=False,
+        report_to="wandb",
+        run_name="7epochs",
         resume_from_checkpoint=False
     )
 

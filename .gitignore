@@ -1,2 +1,4 @@
 venv
 .~lock*
+codet5-finetuned
+wandb
