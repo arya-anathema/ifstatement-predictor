@@ -31,10 +31,10 @@ def exactMatch(str1,str2):
   
 def calcCodeBleu(str1,str2):
   with open("/content/actual_temp.txt", "w") as f:
-    f.write(actu1)
+    f.write(str1)
 
   with open("/content/pred_temp.txt", "w") as f:
-    f.write(pred1)
+    f.write(str2)
 
   command = """
 cd /content/CodeXGLUE/Code-Code/code-to-code-trans/evaluator/CodeBLEU/ && python calc_code_bleu.py --refs /content/actual_temp.txt --hyp /content/pred_temp.txt --lang java --params 0.25,0.25,0.25,0.25"""
