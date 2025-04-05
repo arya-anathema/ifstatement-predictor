@@ -50,11 +50,14 @@ cd /content/CodeXGLUE/Code-Code/code-to-code-trans/evaluator/CodeBLEU/ && python
   return score
 
 def calcSacreBlue(str1,str2):
-  predlist = [str1]
-  actulist = [[str2]]
-  bleu = sacrebleu.corpus_bleu(predlist,actulist)
+  if(len(str1.split())<4 or len(str2.split())<4):
+    return 0.0000000001
+  else: 
+    predlist = [str1]
+    actulist = [[str2]]
+    bleu = sacrebleu.corpus_bleu(predlist,actulist)
 
-  return bleu.score
+    return bleu.score
 
 def calcF1Score(predStr,actuStr):
 
