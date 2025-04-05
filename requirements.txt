@@ -1,4 +1,4 @@
-pandas==2.2.3
+pandas==2.2.2
 torch==2.6.0+cu126
 torchvision==0.21.0+cu126
 torchaudio==2.6.0
@@ -8,4 +8,7 @@ transformers
 evaluate
 accelerate
 wandb
+sacrebleu
+tree_sitter==0.2.0
+tensorflow
 --extra-index-url https://download.pytorch.org/whl/cu126
