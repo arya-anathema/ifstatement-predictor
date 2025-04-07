@@ -18,12 +18,12 @@ WARNING: attempting to run the preprocessing.py script will not work on non-wind
 ```shell
 ~/ngram-recommender $ python -m venv ./venv/
 ```
-For macOS/Linux:
+- For macOS/Linux:
 ```shell 
 ~/ifstatement-predictor $ source venv/bin/activate
 (venv) ~/ifstatement-predictor $ 
 ```
-For Windows:
+- For Windows:
 ```shell
 ~\ifstatement-predictor $ .\venv\Scripts\activate.bat
 (venv) ~\ifstatement-predictor $ 
@@ -34,13 +34,13 @@ For Windows:
 (venv) ~/ifstatement-predictor $ pip install -r requirements.txt
 ```
 # Running the Program
-1. Generate new JSON files based on `student_model.pkl` and `teacher_model.pkl`:
+1. Generate new JSON files based on the contents of the folder `output_csv`:
 ```shell
-python ngram_recommender.py
+python ifstatement-predictor.py
 ```
-2. To retrain either model, delete the file of the one you want to train and rerun the above command.
-    * Edit the `min_ngram` and `max_ngram` values in the `train_test_model` function to train on ngrams within specified parameters.
+2. By default, `ifstatement-predictor.py` will log to Weights & Biases. The documentation for setup can be found [here](https://docs.wandb.ai/quickstart/). You must login using your own account before logging to wandb. 
+    - If you want to disable wandb logging, comment out lines 68 and 69.
 
 # Report
 
-The assignment report is available in the file Writeup.md.
+The assignment report is available in the file `Writeup.md`.
