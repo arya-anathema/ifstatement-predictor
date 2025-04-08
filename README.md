@@ -41,6 +41,8 @@ python ifstatement-predictor.py
 2. By default, `ifstatement-predictor.py` will log to Weights & Biases. The documentation for setup can be found [here](https://docs.wandb.ai/quickstart/). You must login using your own account before logging to wandb. 
     - If you want to disable wandb logging, comment out lines 68 and 69.
 
+3. Our best-performing model can be downloaded [here](https://wmedu-my.sharepoint.com/:u:/g/personal/wjsanders_wm_edu/EYHBxWgIfi5Etl3fJwrgV3ABd3Ao5pvcjqeG9rKTpevjng?e=KIVIjE). This link expires on May 5th, 2025, but the same model can be generated with the data provided in the repo.
+
 # Report
 
 The assignment report is available in the file `Writeup.md`.
