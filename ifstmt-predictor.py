@@ -1,9 +1,8 @@
-from transformers import T5ForConditionalGeneration, AutoModelForSeq2SeqLM
-from transformers import RobertaTokenizer
-from datasets import DatasetDict, Dataset
-from transformers import TrainingArguments, Trainer
-from transformers import EarlyStoppingCallback
 import pandas as pd
+from datasets import Dataset, DatasetDict
+from transformers import (AutoModelForSeq2SeqLM, EarlyStoppingCallback,
+                          RobertaTokenizer, T5ForConditionalGeneration,
+                          Trainer, TrainingArguments)
 
 #init
 model_checkpoint = "Salesforce/codet5-small"
