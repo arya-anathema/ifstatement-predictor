@@ -45,4 +45,4 @@ python ifstatement-predictor.py
 
 # Report
 
-The assignment report is available in the file `Writeup.md`.
+The assignment report is available in the file `Writeup.pdf`.
