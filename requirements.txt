@@ -1,14 +1,8 @@
+datasets==3.5.0
 pandas==2.2.3
+tqdm==4.67.1
+transformers==4.50.3
 torch==2.6.0+cu126
 torchvision==0.21.0+cu126
 torchaudio==2.6.0
-tqdm==4.67.1
-datasets
-transformers
-evaluate
-accelerate
-wandb
-sacrebleu
-tree_sitter==0.2.0
-tensorflow
 --extra-index-url https://download.pytorch.org/whl/cu126
